@@ -1,0 +1,12 @@
+#local presistent volume claim
+#mssql --from-literal=SA_PASSWORD="pa55w0rd!"
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mssql-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 200Mi
